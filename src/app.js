@@ -69,7 +69,20 @@ var HelloWorldLayer = cc.Layer.extend({
         
         this.initPlist();
         this.bakeLayer();
+        
+        this.LayerOut();
         return true;
+    },
+    
+    LayerOut:function() {
+    	this.width = 200;
+    	this.height = 200;
+    	
+    	var node = new cc.LayerColor();
+    	node.setContentSize(this.width, this.height);
+    	node.setColor(cc.color(0, 0, 100, 10));
+    	node.attr = ({x:400,y:0, width:this.width, height:this.height, anchorX:0, anchorY:0 });
+    	this.addChild(node);
     },
     
     initPlist:function() {
